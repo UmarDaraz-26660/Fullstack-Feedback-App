@@ -19,7 +19,11 @@ app.use(express.static("public"));
 // Routes
 app.get("/", async (req, res) => {
   const feedbacks = await Feedback.find().sort({ createdAt: -1 });
-  res.render("index", { feedbacks });
+  res.render("index", { feedbacks });  
+
+
+
+  
 });
 
 app.post("/feedback", async (req, res) => {
